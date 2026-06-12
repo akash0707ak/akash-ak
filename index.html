@@ -10,29 +10,28 @@
   <style>
     /* ===== VARIABLES ===== */
     :root {
-      --bg:    #06080a;
-      --bg2:   #0b0e12;
-      --bg3:   #111520;
-      --bg4:   #181d28;
-      --g:     #00ff41;
+      --bg: #06080a;
+      --bg2: #0b0e12;
+      --bg3: #111520;
+      --bg4: #181d28;
+      --g: #00ff41;
       --g-dim: #00942a;
-      --g-gl:  rgba(0,255,65,.22);
-      --c:     #00e5ff;
+      --g-gl: rgba(0,255,65,.22);
+      --c: #00e5ff;
       --c-dim: #008fa8;
-      --c-gl:  rgba(0,229,255,.22);
-      --a:     #ffaa00;
+      --c-gl: rgba(0,229,255,.22);
+      --a: #ffaa00;
       --a-dim: #9a6600;
-      --a-gl:  rgba(255,170,0,.22);
-      --r:     #ff3355;
-      --txt:   #8fa0b0;
+      --a-gl: rgba(255,170,0,.22);
+      --r: #ff3355;
+      --txt: #8fa0b0;
       --txtbr: #d8e8f0;
-      --bdr:   #141c26;
-      --bdr2:  #1e2a38;
-      --mono:  'JetBrains Mono', monospace;
-      --disp:  'Bebas Neue', cursive;
-      --ui:    'Oxanium', sans-serif;
+      --bdr: #141c26;
+      --bdr2: #1e2a38;
+      --mono: 'JetBrains Mono', monospace;
+      --disp: 'Bebas Neue', cursive;
+      --ui: 'Oxanium', sans-serif;
     }
-
     /* ===== RESET ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -42,19 +41,16 @@
     ::-webkit-scrollbar-thumb { background: var(--g-dim); }
     ::selection { background: var(--g); color: var(--bg); }
     a { text-decoration: none; }
-
     /* ===== CRT SCANLINES ===== */
     body::before {
       content:''; position:fixed; inset:0; z-index:9990; pointer-events:none;
       background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.06) 2px,rgba(0,0,0,.06) 4px);
     }
-
     /* ===== PHOSPHOR VIGNETTE ===== */
     body::after {
       content:''; position:fixed; inset:0; z-index:9989; pointer-events:none;
       background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,.55) 100%);
     }
-
     /* ===== BIOS SCREEN ===== */
     #bios {
       position: fixed; inset: 0; background: #000; z-index: 10000;
@@ -74,11 +70,9 @@
       letter-spacing: .12em; animation: blink-anim 1s step-end infinite;
     }
     @keyframes blink-anim { 0%,100%{opacity:1} 50%{opacity:0} }
-
     /* ===== MAIN ===== */
     #main { opacity:0; transition: opacity .7s ease; }
     #main.show { opacity:1; }
-
     /* ===== NAVBAR ===== */
     nav {
       position: fixed; top:0; left:0; right:0; height: 46px;
@@ -120,7 +114,6 @@
     .dc { background:var(--c); box-shadow:0 0 5px var(--c); animation-delay:1.2s; }
     @keyframes pd { 0%,100%{opacity:1}50%{opacity:.25} }
     #clk { font-family:var(--mono); font-size:12px; color:var(--c); letter-spacing:.04em; }
-
     /* ===== SHARED ===== */
     .sec-in { max-width:1100px; margin:0 auto; padding:110px 24px 80px; }
     .sec-label {
@@ -139,7 +132,6 @@
     .aa { color:var(--a); text-shadow:0 0 28px var(--a-gl); }
     .reveal { opacity:0; transform:translateY(28px); transition:all .6s ease; }
     .reveal.vis { opacity:1; transform:translateY(0); }
-
     /* ===== HERO ===== */
     #hero {
       min-height:100vh; display:flex; align-items:center; padding-top:46px;
@@ -230,7 +222,6 @@
     .sl { font-family:var(--mono); font-size:10px; color:var(--bdr2); text-transform:uppercase; letter-spacing:.1em; margin-top:3px; }
     .h-cta { display:flex; gap:14px; flex-wrap:wrap; animation:fiu .6s .5s both; }
     @keyframes fiu { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
-
     /* Buttons */
     .btn {
       font-family:var(--mono); font-size:11px; padding:11px 24px;
@@ -243,7 +234,6 @@
     .btn-c:hover { background:rgba(0,229,255,.08); box-shadow:0 0 22px var(--c-gl); }
     .btn-a { background:transparent; color:var(--a); border:1px solid var(--a); }
     .btn-a:hover { background:rgba(255,170,0,.08); box-shadow:0 0 22px var(--a-gl); }
-
     /* Hero Terminal */
     .tw {
       background:var(--bg2); border:1px solid var(--bdr2);
@@ -259,17 +249,17 @@
     .dr { background:#ff5f57; } .dy { background:#ffbd2e; } .dg2 { background:#28ca41; }
     .ttitle { font-family:var(--mono); font-size:11px; color:var(--bdr2); }
     .tb { padding:18px 20px; font-family:var(--mono); font-size:12px; line-height:2; color:var(--txt); }
-    .tp  { color:var(--g); }
+    .tp { color:var(--g); }
     .tcm { color:var(--txtbr); }
-    .tk  { color:var(--a); }
-    .tv  { color:var(--c); }
-    .ts  { color:#7ec88e; }
+    .tk { color:var(--a); }
+    .tv { color:var(--c); }
+    .ts { color:#7ec88e; }
     .tdim{ color:var(--bdr2); }
-    .tl  { display:flex; gap:7px; }
-
+    .tl { display:flex; gap:7px; }
     /* ===== SKILLS ===== */
     #skills { background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%); }
-    .skills-cats { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .skills-cats { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
+    @media(max-width:1100px){ .skills-cats { grid-template-columns:repeat(2,1fr); } }
     .cat-label {
       font-family:var(--mono); font-size:11px; color:var(--bdr2);
       text-transform:uppercase; letter-spacing:.18em; margin-bottom:14px;
@@ -299,7 +289,6 @@
     }
     .tag.tc { background:rgba(0,229,255,.05); border-color:rgba(0,229,255,.2); color:var(--c); }
     .tag.ta { background:rgba(255,170,0,.05); border-color:rgba(255,170,0,.2); color:var(--a); }
-
     /* ===== TIMELINE ===== */
     #experience { background:var(--bg); }
     .tl-wrap { position:relative; padding-left:42px; }
@@ -340,7 +329,6 @@
     .tl-t { font-family:var(--ui); font-size:18px; font-weight:700; color:var(--txtbr); margin-bottom:4px; }
     .tl-sub { font-family:var(--mono); font-size:12px; color:var(--bdr2); margin-bottom:14px; }
     .tl-body { font-family:var(--mono); font-size:12px; color:var(--txt); line-height:1.85; }
-
     /* ===== PROJECTS ===== */
     #projects { background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%); }
     .proj-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:22px; }
@@ -365,7 +353,6 @@
     .pdesc li { padding-left:16px; position:relative; margin-bottom:4px; }
     .pdesc li::before { content:'>'; position:absolute; left:0; color:var(--g); }
     .ptags { display:flex; flex-wrap:wrap; gap:7px; }
-
     /* ===== CONTACT ===== */
     #contact { background:var(--bg); min-height:100vh; }
     .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
@@ -383,7 +370,6 @@
     }
     .cilbl { font-family:var(--mono); font-size:10px; color:var(--bdr2); text-transform:uppercase; letter-spacing:.1em; }
     .cival { font-family:var(--mono); font-size:13px; color:var(--txtbr); }
-
     /* Interactive Terminal */
     .ct { background:var(--bg2); border:1px solid var(--bdr2); overflow:hidden; box-shadow:0 0 40px rgba(0,255,65,.05); }
     .ctb { background:var(--bg3); border-bottom:1px solid var(--bdr); padding:9px 15px; display:flex; align-items:center; justify-content:space-between; }
@@ -394,7 +380,7 @@
       line-height:2; color:var(--txt);
     }
     .ctl { display:flex; gap:8px; flex-wrap:wrap; }
-    .ctp  { color:var(--g); }
+    .ctp { color:var(--g); }
     .cterr{ color:var(--r); }
     .ctok { color:var(--g); }
     .ctinf{ color:var(--c); }
@@ -409,7 +395,6 @@
       font-family:var(--mono); font-size:12px; color:var(--txtbr);
       caret-color:var(--g);
     }
-
     /* ===== FOOTER ===== */
     footer {
       background:var(--bg2); border-top:1px solid var(--bdr);
@@ -417,7 +402,6 @@
     }
     footer span.fg { color:var(--g); }
     footer span.fr { color:var(--r); }
-
     /* ===== RESPONSIVE ===== */
     @media(max-width:900px){
       .hero-in { grid-template-columns:1fr; }
@@ -434,16 +418,13 @@
   </style>
 </head>
 <body>
-
 <!-- =============== BIOS BOOT SCREEN =============== -->
 <div id="bios">
   <div id="bios-out"></div>
   <div id="bios-skip">[ PRESS ANY KEY TO SKIP ]</div>
 </div>
-
 <!-- =============== MAIN SITE =============== -->
 <div id="main">
-
   <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nl">
@@ -455,11 +436,11 @@
       <span class="nver">v1.0.2026</span>
     </div>
     <div class="nc">
-      <a href="#hero"       class="nav-a active">HOME</a>
-      <a href="#skills"     class="nav-a">SKILLS</a>
+      <a href="#hero" class="nav-a active">HOME</a>
+      <a href="#skills" class="nav-a">SKILLS</a>
       <a href="#experience" class="nav-a">EDUCATION</a>
-      <a href="#projects"   class="nav-a">PROJECTS</a>
-      <a href="#contact"    class="nav-a">CONTACT</a>
+      <a href="#projects" class="nav-a">PROJECTS</a>
+      <a href="#contact" class="nav-a">CONTACT</a>
     </div>
     <div class="nr">
       <div class="dots">
@@ -470,7 +451,6 @@
       <div id="clk">00:00:00</div>
     </div>
   </nav>
-
   <!-- ========== HERO ========== -->
   <section id="hero">
     <div class="hero-grid"></div>
@@ -492,14 +472,15 @@
           <span class="tcur"></span>
         </div>
         <p class="h-desc">
-          Motivated B.Sc. Computer Science student from Pudukkottai, Tamil Nadu.
-          Skilled in Python, PHP, HTML, CSS and MySQL. Passionate about software
-          development, problem solving and building real-world solutions.
+          B.Sc. Computer Science graduate (Bharathidasan University, 2026) building
+          a production-ready Android RPG in Unity, an AI assistant app with the
+          Claude API, and real-world Python/PHP solutions. Certified in Generative
+          AI with IBM. Seeking Python Developer, Software Developer or IT Intern roles.
         </p>
         <div class="h-stats">
-          <div><div class="sv sg">1</div><div class="sl">Project</div></div>
-          <div><div class="sv sc">5+</div><div class="sl">Tech Stack</div></div>
-          <div><div class="sv sa">2026</div><div class="sl">Graduating</div></div>
+          <div><div class="sv sg">5</div><div class="sl">Projects</div></div>
+          <div><div class="sv sc">8+</div><div class="sl">Tech Stack</div></div>
+          <div><div class="sv sa">2026</div><div class="sl">Graduate</div></div>
           <div><div class="sv sg">∞</div><div class="sl">Curiosity</div></div>
         </div>
         <div class="h-cta">
@@ -508,7 +489,6 @@
           <a href="https://github.com/akash0707ak" target="_blank" class="btn btn-a">GITHUB</a>
         </div>
       </div>
-
       <!-- Terminal Panel -->
       <div class="tw">
         <div class="ttb">
@@ -520,11 +500,11 @@
           <div class="tl"><span class="tp">$</span><span class="tcm"> cat profile.json</span></div>
           <div style="color:var(--bdr2);margin:2px 0">{</div>
           <div style="padding-left:16px"><span class="tk">"name"</span>: <span class="ts">"Akash M"</span>,</div>
-          <div style="padding-left:16px"><span class="tk">"role"</span>: <span class="ts">"CS Student / Developer"</span>,</div>
+          <div style="padding-left:16px"><span class="tk">"role"</span>: <span class="ts">"Python Developer / Game Dev"</span>,</div>
           <div style="padding-left:16px"><span class="tk">"location"</span>: <span class="ts">"Pudukkottai, TN, India"</span>,</div>
           <div style="padding-left:16px"><span class="tk">"university"</span>: <span class="ts">"Bharathidasan University"</span>,</div>
           <div style="padding-left:16px"><span class="tk">"graduation"</span>: <span class="tv">2026</span>,</div>
-          <div style="padding-left:16px"><span class="tk">"seeking"</span>: <span class="ts">"SWE / Python / IT Intern"</span>,</div>
+          <div style="padding-left:16px"><span class="tk">"seeking"</span>: <span class="ts">"Python Dev / SWE / IT Intern"</span>,</div>
           <div style="padding-left:16px"><span class="tk">"certifications"</span>: [<span class="ts">"NM GenAI × IBM"</span>],</div>
           <div style="padding-left:16px"><span class="tk">"languages"</span>: [<span class="ts">"Tamil"</span>, <span class="ts">"English"</span>],</div>
           <div style="padding-left:16px"><span class="tk">"status"</span>: <span style="color:var(--g)">✓ AVAILABLE</span></div>
@@ -537,7 +517,6 @@
       </div>
     </div>
   </section>
-
   <!-- ========== SKILLS ========== -->
   <section id="skills">
     <div class="sec-in">
@@ -545,7 +524,6 @@
         <div class="sec-label">SYSTEM_MODULES</div>
         <h2 class="sec-h">SKILLS<br><span class="ag">&amp; EXPERTISE</span></h2>
       </div>
-
       <div class="skills-cats">
         <!-- Column 1: Languages -->
         <div class="reveal">
@@ -556,34 +534,56 @@
             <div class="sk-pct">85% — Intermediate / Advanced</div>
           </div>
           <div class="sk-card">
+            <div class="sk-hd"><span class="sk-ico">🎮</span><span class="sk-nm">C# (Unity)</span></div>
+            <div class="sk-bg"><div class="sk-fill" data-w="80"></div></div>
+            <div class="sk-pct">80% — Intermediate / Advanced</div>
+          </div>
+          <div class="sk-card">
             <div class="sk-hd"><span class="sk-ico">🐘</span><span class="sk-nm">PHP</span></div>
             <div class="sk-bg"><div class="sk-fill" data-w="72"></div></div>
             <div class="sk-pct">72% — Intermediate</div>
           </div>
         </div>
-
         <!-- Column 2: Web -->
         <div class="reveal">
-          <div class="cat-label">&gt; Web Technologies</div>
+          <div class="cat-label">&gt; Web &amp; Frontend</div>
           <div class="sk-card">
-            <div class="sk-hd"><span class="sk-ico">🌐</span><span class="sk-nm">HTML</span></div>
+            <div class="sk-hd"><span class="sk-ico">⚛️</span><span class="sk-nm">React (JS)</span></div>
+            <div class="sk-bg"><div class="sk-fill" data-w="78"></div></div>
+            <div class="sk-pct">78% — Intermediate / Advanced</div>
+          </div>
+          <div class="sk-card">
+            <div class="sk-hd"><span class="sk-ico">🌐</span><span class="sk-nm">HTML5 / CSS3</span></div>
             <div class="sk-bg"><div class="sk-fill" data-w="88"></div></div>
             <div class="sk-pct">88% — Advanced</div>
           </div>
+        </div>
+        <!-- Column 3: Game Dev & AI -->
+        <div class="reveal">
+          <div class="cat-label">&gt; Game Dev &amp; AI</div>
           <div class="sk-card">
-            <div class="sk-hd"><span class="sk-ico">🎨</span><span class="sk-nm">CSS</span></div>
+            <div class="sk-hd"><span class="sk-ico">🕹️</span><span class="sk-nm">Unity 6 / Android SDK</span></div>
             <div class="sk-bg"><div class="sk-fill" data-w="80"></div></div>
             <div class="sk-pct">80% — Intermediate / Advanced</div>
           </div>
-        </div>
-
-        <!-- Column 3: DB + Soft -->
-        <div class="reveal">
-          <div class="cat-label">&gt; Database &amp; Soft Skills</div>
           <div class="sk-card">
-            <div class="sk-hd"><span class="sk-ico">🗄️</span><span class="sk-nm">MySQL</span></div>
+            <div class="sk-hd"><span class="sk-ico">🤖</span><span class="sk-nm">GenAI / LLM Integration</span></div>
+            <div class="sk-bg"><div class="sk-fill" data-w="82"></div></div>
+            <div class="sk-pct">82% — Prompt Engg &amp; API Integration</div>
+          </div>
+        </div>
+        <!-- Column 4: DB + Soft -->
+        <div class="reveal">
+          <div class="cat-label">&gt; Database, Tools &amp; Soft Skills</div>
+          <div class="sk-card">
+            <div class="sk-hd"><span class="sk-ico">🗄️</span><span class="sk-nm">MySQL / SQL</span></div>
             <div class="sk-bg"><div class="sk-fill" data-w="75"></div></div>
             <div class="sk-pct">75% — Intermediate</div>
+          </div>
+          <div class="sk-card">
+            <div class="sk-hd"><span class="sk-ico">🔧</span><span class="sk-nm">Git / GitHub</span></div>
+            <div class="sk-bg"><div class="sk-fill" data-w="78"></div></div>
+            <div class="sk-pct">78% — Intermediate</div>
           </div>
           <div class="sk-card">
             <div class="sk-hd"><span class="sk-ico">🤝</span><span class="sk-nm">Collaboration</span></div>
@@ -592,24 +592,24 @@
           </div>
         </div>
       </div>
-
       <!-- Expertise Tags -->
       <div class="reveal">
         <div class="tag-row" style="margin-top:36px">
           <span class="cat-label" style="width:100%;margin:0 0 12px">&gt; Areas of Expertise</span>
+          <span class="tag">Game Systems Architecture</span>
+          <span class="tag tc">Prompt Engineering</span>
+          <span class="tag ta">AI Product Design</span>
           <span class="tag">Web Development</span>
           <span class="tag tc">Problem Solving</span>
           <span class="tag ta">Software Development</span>
           <span class="tag">Team Collaboration</span>
-          <span class="tag tc">Communication</span>
-          <span class="tag ta">Tech Documentation</span>
-          <span class="tag">GenAI Concepts</span>
-          <span class="tag tc">Real-time Systems</span>
+          <span class="tag tc">Adaptability</span>
+          <span class="tag ta">Communication</span>
+          <span class="tag">Real-time Systems</span>
         </div>
       </div>
     </div>
   </section>
-
   <!-- ========== EDUCATION / EXPERIENCE ========== -->
   <section id="experience">
     <div class="sec-in">
@@ -617,9 +617,7 @@
         <div class="sec-label">SYSTEM_LOG</div>
         <h2 class="sec-h">EDUCA<span class="ac">TION</span><br>&amp; CERTS</h2>
       </div>
-
       <div class="tl-wrap">
-
         <!-- Education -->
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
@@ -637,7 +635,6 @@
             </div>
           </div>
         </div>
-
         <!-- Certification -->
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
@@ -653,7 +650,22 @@
             </div>
           </div>
         </div>
-
+        <!-- Final Year Project -->
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Dec 2025 — Mar 2026</div>
+          <div class="tl-badge">FINAL YEAR PROJECT</div>
+          <div class="tl-card">
+            <div class="tl-t">Smart Parking System</div>
+            <div class="tl-sub">Python · Real-time Detection &amp; Allocation</div>
+            <div class="tl-body">
+              Automated real-time parking slot detection and allocation using Python,
+              reducing manual effort by ~60%. Built with a modular architecture and
+              accompanied by full technical documentation covering system design and
+              workflow reports.
+            </div>
+          </div>
+        </div>
         <!-- Achievement -->
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
@@ -663,18 +675,16 @@
             <div class="tl-t">District-Level Football Goalkeeper 🥅</div>
             <div class="tl-sub">Sport · Leadership · Discipline</div>
             <div class="tl-body">
-              Represented the district as a competitive football goalkeeper — demonstrating
+              Represented the district as the main goalkeeper — demonstrating
               strategic thinking under pressure, split-second decision-making, teamwork,
               and leadership. Skills that map directly to collaborative, deadline-driven
               software development environments.
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- ========== PROJECTS ========== -->
   <section id="projects">
     <div class="sec-in">
@@ -682,9 +692,53 @@
         <div class="sec-label">DEPLOYED_APPS</div>
         <h2 class="sec-h">PRO<span class="aa">JECTS</span></h2>
       </div>
-
       <div class="proj-grid">
-
+        <!-- Kumari Kandam -->
+        <div class="pc reveal">
+          <div class="ph">
+            <div class="pdots"><span class="dr"></span><span class="dy"></span><span class="dg2"></span></div>
+            <span class="ptyp">UNITY 6 :: C# :: ANDROID</span>
+          </div>
+          <div class="pb">
+            <div class="pnum">PROJECT_01</div>
+            <div class="pname">Kumari Kandam: Eternal Legacy</div>
+            <div class="tl-sub" style="margin-bottom:8px">Android Open-World Action RPG · 2025 – Present (In Development)</div>
+            <ul class="pdesc">
+              <li>Architected 11 production-ready Unity C# systems: Kalaripayattu combat, boss AI behaviour trees, gacha/summon, IAP billing.</li>
+              <li>Built multiplayer systems — co-op, Guild Wars, PvP, Battle Royale — plus cloud save and a full HUD.</li>
+              <li>Designed a 50-hero roster, bilingual Tamil/English dialogue pipeline, and a React-based animated game website with trailer materials.</li>
+            </ul>
+            <div class="ptags">
+              <span class="tag">Unity 6</span>
+              <span class="tag tc">C#</span>
+              <span class="tag ta">Android SDK</span>
+              <span class="tag">Game Architecture</span>
+            </div>
+          </div>
+        </div>
+        <!-- Omnix -->
+        <div class="pc reveal">
+          <div class="ph">
+            <div class="pdots"><span class="dr"></span><span class="dy"></span><span class="dg2"></span></div>
+            <span class="ptyp">REACT :: CLAUDE API :: AI</span>
+          </div>
+          <div class="pb">
+            <div class="pnum">PROJECT_02</div>
+            <div class="pname">Omnix — Jarvis-Style AI Assistant</div>
+            <div class="tl-sub" style="margin-bottom:8px">React, JavaScript, Claude API · 2025 – Present (In Development)</div>
+            <ul class="pdesc">
+              <li>Prototyped a predictive multi-mode AI assistant for professionals with productivity, research, and Free Fire Gamer Mode.</li>
+              <li>Built a React HUD prototype with a dark futuristic UI.</li>
+              <li>Defined a B2B freemium monetisation and API licensing strategy.</li>
+            </ul>
+            <div class="ptags">
+              <span class="tag">React</span>
+              <span class="tag tc">JavaScript</span>
+              <span class="tag ta">Claude API</span>
+              <span class="tag">AI Product Design</span>
+            </div>
+          </div>
+        </div>
         <!-- Smart Parking System -->
         <div class="pc reveal">
           <div class="ph">
@@ -692,13 +746,12 @@
             <span class="ptyp">PYTHON :: SYSTEM DESIGN</span>
           </div>
           <div class="pb">
-            <div class="pnum">PROJECT_01</div>
+            <div class="pnum">PROJECT_03</div>
             <div class="pname">Smart Parking System</div>
+            <div class="tl-sub" style="margin-bottom:8px">Python · Final Year Project · Dec 2025 – Mar 2026</div>
             <ul class="pdesc">
-              <li>Built a parking-space management system to maximise slot utilisation efficiency.</li>
-              <li>Implemented Python logic for real-time slot monitoring and state tracking.</li>
-              <li>Designed an intuitive interface for parking slot management and reporting.</li>
-              <li>Prepared full technical documentation and workflow reports for the system.</li>
+              <li>Automated real-time parking slot detection and allocation in Python, reducing manual effort by ~60%.</li>
+              <li>Modular architecture with full technical documentation covering system design and workflow reports.</li>
             </ul>
             <div class="ptags">
               <span class="tag">Python</span>
@@ -708,30 +761,51 @@
             </div>
           </div>
         </div>
-
-        <!-- Placeholder -->
-        <div class="pc reveal" style="border-style:dashed;border-color:var(--bdr2);opacity:.45;cursor:default">
-          <div class="ph" style="background:transparent">
-            <div class="pdots">
-              <span style="width:8px;height:8px;border-radius:50%;background:var(--bdr2)"></span>
-              <span style="width:8px;height:8px;border-radius:50%;background:var(--bdr2)"></span>
-              <span style="width:8px;height:8px;border-radius:50%;background:var(--bdr2)"></span>
-            </div>
-            <span class="ptyp" style="color:var(--bdr2)">UPCOMING</span>
+        <!-- Citizen AI -->
+        <div class="pc reveal">
+          <div class="ph">
+            <div class="pdots"><span class="dr"></span><span class="dy"></span><span class="dg2"></span></div>
+            <span class="ptyp">PYTHON :: AI :: WEB</span>
           </div>
-          <div class="pb" style="align-items:center;justify-content:center;text-align:center;min-height:210px">
-            <div style="font-size:34px;color:var(--bdr2);margin-bottom:10px">+</div>
-            <div style="font-family:var(--mono);font-size:12px;color:var(--bdr2)">
-              Next project<br>loading...<br>
-              <span class="blinker" style="width:6px;height:12px;background:var(--bdr2);margin-top:6px;display:inline-block"></span>
+          <div class="pb">
+            <div class="pnum">PROJECT_04</div>
+            <div class="pname">Citizen AI — Citizen Engagement Platform</div>
+            <div class="tl-sub" style="margin-bottom:8px">Python, HTML, CSS · 2025 – 2026</div>
+            <ul class="pdesc">
+              <li>AI-powered platform automating citizen-to-government query resolution.</li>
+              <li>Responsive front-end built and published on GitHub.</li>
+            </ul>
+            <div class="ptags">
+              <span class="tag">Python</span>
+              <span class="tag tc">HTML/CSS</span>
+              <span class="tag ta">AI Automation</span>
             </div>
           </div>
         </div>
-
+        <!-- Digital Portfolio -->
+        <div class="pc reveal">
+          <div class="ph">
+            <div class="pdots"><span class="dr"></span><span class="dy"></span><span class="dg2"></span></div>
+            <span class="ptyp">HTML :: CSS :: VERCEL</span>
+          </div>
+          <div class="pb">
+            <div class="pnum">PROJECT_05</div>
+            <div class="pname">Digital Portfolio Website</div>
+            <div class="tl-sub" style="margin-bottom:8px">HTML, CSS · akash-ak.vercel.app · 2025</div>
+            <ul class="pdesc">
+              <li>Terminal/OS-themed portfolio deployed on Vercel.</li>
+              <li>Showcases projects, skills, and achievements with a retro UI.</li>
+            </ul>
+            <div class="ptags">
+              <span class="tag">HTML</span>
+              <span class="tag tc">CSS</span>
+              <span class="tag ta">Vercel</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <!-- ========== CONTACT ========== -->
   <section id="contact">
     <div class="sec-in">
@@ -739,41 +813,35 @@
         <div class="sec-label">ESTABLISH_CONNECTION</div>
         <h2 class="sec-h">GET IN<br><span class="ag">TOUCH</span></h2>
       </div>
-
       <div class="contact-grid">
         <!-- Info -->
         <div class="ci reveal">
           <p class="ci-intro">
-            Currently seeking opportunities as a Software Developer, Python Developer, or IT Intern.
-            Open to full-time roles, internships and collaborative projects. Response time under 24 hours.
+            B.Sc. Computer Science graduate (2026) seeking opportunities as a Python
+            Developer, Software Developer, or IT Intern. Open to full-time roles,
+            internships and collaborative projects. Response time under 24 hours.
           </p>
-
           <a href="mailto:akash0707akav@gmail.com" class="cit">
             <div class="cion">@</div>
             <div><div class="cilbl">Email</div><div class="cival">akash0707akav@gmail.com</div></div>
           </a>
-
           <a href="tel:+917708361814" class="cit">
             <div class="cion">✆</div>
             <div><div class="cilbl">Phone</div><div class="cival">+91 77083 61814</div></div>
           </a>
-
           <a href="https://github.com/akash0707ak" target="_blank" class="cit">
             <div class="cion" style="color:var(--c);border-color:var(--c-dim)">&lt;/&gt;</div>
             <div><div class="cilbl">GitHub</div><div class="cival">github.com/akash0707ak</div></div>
           </a>
-
           <a href="https://linkedin.com/in/akash-m-0b7362369" target="_blank" class="cit">
             <div class="cion" style="color:var(--a);border-color:var(--a-dim)">in</div>
             <div><div class="cilbl">LinkedIn</div><div class="cival">linkedin.com/in/akash-m-0b7362369</div></div>
           </a>
-
           <div class="cit" style="cursor:default">
             <div class="cion" style="color:var(--a);border-color:var(--a-dim)">📍</div>
             <div><div class="cilbl">Location</div><div class="cival">Pudukkottai, Tamil Nadu, India</div></div>
           </div>
         </div>
-
         <!-- Interactive Terminal -->
         <div class="ct reveal">
           <div class="ctb">
@@ -783,7 +851,7 @@
           </div>
           <div id="cto">
             <div class="ctl"><span class="ctok">╔═══════════════════════════════════╗</span></div>
-            <div class="ctl"><span class="ctok">║   AKASH_OS TERMINAL v1.0.2026    ║</span></div>
+            <div class="ctl"><span class="ctok">║ AKASH_OS TERMINAL v1.0.2026 ║</span></div>
             <div class="ctl"><span class="ctok">╚═══════════════════════════════════╝</span></div>
             <div>&nbsp;</div>
             <div class="ctl"><span class="ctinf">System ready. Awaiting your input.</span></div>
@@ -798,7 +866,6 @@
       </div>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer>
     <div style="margin-bottom:4px">
@@ -810,54 +877,50 @@
       <span class="fg">OPEN TO WORK</span>
     </div>
   </footer>
-
 </div><!-- /#main -->
-
 <script>
 /* ============================================================
    BIOS BOOT SEQUENCE
 ============================================================ */
-const biosEl  = document.getElementById('bios');
+const biosEl = document.getElementById('bios');
 const biosOut = document.getElementById('bios-out');
-const mainEl  = document.getElementById('main');
-
+const mainEl = document.getElementById('main');
 const BIOS_LINES = [
-  { t:'╔═══════════════════════════════════════════════════════╗', c:'bg', d:80  },
-  { t:'║        AKASH-OS BIOS  v2.0.2026  (C) AKASH Corp      ║', c:'bg', d:40  },
+  { t:'╔═══════════════════════════════════════════════════════╗', c:'bg', d:80 },
+  { t:'║ AKASH-OS BIOS v2.0.2026 (C) AKASH Corp ║', c:'bg', d:40 },
   { t:'╚═══════════════════════════════════════════════════════╝', c:'bg', d:100 },
-  { t:'',                                                          c:'',   d:80  },
-  { t:'CPU  :  Biological Neural Net  @  3.6 GHz',                c:'bw', d:70  },
-  { t:'RAM  :  Creative Memory  16384 MB  DDR5',                  c:'bw', d:70  },
-  { t:'GPU  :  Problem-Solving Accelerator  v4.2',                c:'bw', d:70  },
-  { t:'DISK :  Portfolio_SSD  256 GB  NVMe',                      c:'bw', d:70  },
-  { t:'',                                                          c:'',   d:80  },
-  { t:'DETECTING HARDWARE .....',                                  c:'ba', d:280 },
-  { t:'  > Python Engine ............... [ OK ]',                  c:'',   d:80  },
-  { t:'  > PHP Module .................. [ OK ]',                  c:'',   d:80  },
-  { t:'  > HTML / CSS Stack ............ [ OK ]',                  c:'',   d:80  },
-  { t:'  > MySQL Database .............. [ OK ]',                  c:'',   d:80  },
-  { t:'  > Football Reflex Module ....... [ OK ]',                 c:'',   d:80  },
-  { t:'  > GenAI × IBM Core ............ [ OK ]',                  c:'',   d:80  },
-  { t:'',                                                          c:'',   d:60  },
-  { t:'LOADING SKILL MODULES .....',                               c:'bc', d:240 },
-  { t:'  [████████████████████]  100%   Python, PHP, HTML, CSS, MySQL', c:'bg', d:180 },
-  { t:'',                                                          c:'',   d:80  },
-  { t:'MOUNTING FILESYSTEMS .....',                                c:'ba', d:200 },
-  { t:'  > /home/akash/projects .......... [ MOUNTED ]',          c:'bg', d:80  },
-  { t:'  > /etc/skills .................. [ LOADED  ]',           c:'bg', d:80  },
-  { t:'  > /var/achievements ............. [ READY   ]',          c:'bg', d:80  },
-  { t:'  > /tmp/opportunities ............ [ OPEN    ]',          c:'bg', d:80  },
-  { t:'',                                                          c:'',   d:80  },
+  { t:'', c:'', d:80 },
+  { t:'CPU : Biological Neural Net @ 3.6 GHz', c:'bw', d:70 },
+  { t:'RAM : Creative Memory 16384 MB DDR5', c:'bw', d:70 },
+  { t:'GPU : Problem-Solving Accelerator v4.2', c:'bw', d:70 },
+  { t:'DISK : Portfolio_SSD 256 GB NVMe', c:'bw', d:70 },
+  { t:'', c:'', d:80 },
+  { t:'DETECTING HARDWARE .....', c:'ba', d:280 },
+  { t:' > Python Engine ............... [ OK ]', c:'', d:80 },
+  { t:' > Unity 6 / C# Engine .......... [ OK ]', c:'', d:80 },
+  { t:' > React HUD Module ............ [ OK ]', c:'', d:80 },
+  { t:' > PHP Module .................. [ OK ]', c:'', d:80 },
+  { t:' > MySQL Database .............. [ OK ]', c:'', d:80 },
+  { t:' > Football Reflex Module ....... [ OK ]', c:'', d:80 },
+  { t:' > GenAI × IBM Core ............ [ OK ]', c:'', d:80 },
+  { t:'', c:'', d:60 },
+  { t:'LOADING SKILL MODULES .....', c:'bc', d:240 },
+  { t:' [████████████████████] 100% Python, C#/Unity, React, PHP, SQL', c:'bg', d:180 },
+  { t:'', c:'', d:80 },
+  { t:'MOUNTING FILESYSTEMS .....', c:'ba', d:200 },
+  { t:' > /home/akash/projects .......... [ MOUNTED ]', c:'bg', d:80 },
+  { t:' > /etc/skills .................. [ LOADED ]', c:'bg', d:80 },
+  { t:' > /var/achievements ............. [ READY ]', c:'bg', d:80 },
+  { t:' > /tmp/opportunities ............ [ OPEN ]', c:'bg', d:80 },
+  { t:'', c:'', d:80 },
   { t:'┌─────────────────────────────────────────────────────────┐', c:'bg', d:60 },
-  { t:'│       BOOT_SUCCESS :: All systems nominal               │', c:'bg', d:40 },
-  { t:'│       Launching portfolio interface ...                  │', c:'bg', d:40 },
+  { t:'│ BOOT_SUCCESS :: All systems nominal │', c:'bg', d:40 },
+  { t:'│ Launching portfolio interface ... │', c:'bg', d:40 },
   { t:'└─────────────────────────────────────────────────────────┘', c:'bg', d:60 },
-  { t:'',                                                          c:'',   d:220 },
+  { t:'', c:'', d:220 },
 ];
-
 let biosIdx = 0;
 let skipped = false;
-
 function addLine(line) {
   const d = document.createElement('div');
   d.style.cssText = 'line-height:2;white-space:pre;font-family:var(--mono);font-size:13px';
@@ -869,7 +932,6 @@ function addLine(line) {
   d.textContent = line.t || '\u00a0';
   biosOut.appendChild(d);
 }
-
 function runBios() {
   if (skipped) return;
   if (biosIdx >= BIOS_LINES.length) { finishBoot(); return; }
@@ -878,7 +940,6 @@ function runBios() {
   biosIdx++;
   setTimeout(runBios, nextDelay);
 }
-
 function finishBoot() {
   setTimeout(() => {
     biosEl.classList.add('out');
@@ -886,18 +947,15 @@ function finishBoot() {
     setTimeout(() => { biosEl.style.display = 'none'; }, 800);
   }, 500);
 }
-
 function skipBios() {
   if (skipped) return;
   skipped = true;
   while (biosIdx < BIOS_LINES.length) addLine(BIOS_LINES[biosIdx++]);
   finishBoot();
 }
-
 document.addEventListener('keydown', skipBios, { once: true });
 document.getElementById('bios-skip').addEventListener('click', skipBios);
 setTimeout(runBios, 350);
-
 /* ============================================================
    LIVE CLOCK
 ============================================================ */
@@ -907,7 +965,6 @@ function tick() {
   document.getElementById('clk').textContent = `${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`;
 }
 setInterval(tick, 1000); tick();
-
 /* ============================================================
    TYPING ANIMATION
 ============================================================ */
@@ -922,7 +979,6 @@ const roles = [
 ];
 let ri = 0, ci = 0, del = false;
 const typEl = document.getElementById('typ');
-
 function typeRole() {
   const cur = roles[ri];
   typEl.textContent = del ? cur.slice(0, ci - 1) : cur.slice(0, ci + 1);
@@ -933,7 +989,6 @@ function typeRole() {
   setTimeout(typeRole, sp);
 }
 typeRole();
-
 /* ============================================================
    SCROLL REVEAL
 ============================================================ */
@@ -946,7 +1001,6 @@ function checkReveal() {
 }
 window.addEventListener('scroll', checkReveal);
 checkReveal();
-
 /* ============================================================
    SKILL BAR ANIMATION
 ============================================================ */
@@ -961,7 +1015,6 @@ const skillObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.35 });
 document.querySelectorAll('.skills-cats > div').forEach(c => skillObs.observe(c));
-
 /* ============================================================
    ACTIVE NAV ON SCROLL
 ============================================================ */
@@ -974,62 +1027,73 @@ window.addEventListener('scroll', () => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
 });
-
 /* ============================================================
    INTERACTIVE TERMINAL
 ============================================================ */
 const cto = document.getElementById('cto');
 const cti = document.getElementById('cti');
-
 const CMDS = {
   help: () => [
     ['ctinf', '┌── AVAILABLE COMMANDS ─────────────────────────┐'],
-    ['ctwrn', '  help       → Show this help menu'],
-    ['ctwrn', '  whoami     → Who is Akash?'],
-    ['ctwrn', '  skills     → List tech skills & levels'],
-    ['ctwrn', '  projects   → Show project highlights'],
-    ['ctwrn', '  contact    → Display all contact info'],
-    ['ctwrn', '  email      → Open email client'],
-    ['ctwrn', '  github     → Open GitHub profile'],
-    ['ctwrn', '  linkedin   → Open LinkedIn'],
-    ['ctwrn', '  status     → Availability status'],
-    ['ctwrn', '  resume     → Download/view resume'],
-    ['ctwrn', '  clear      → Clear terminal output'],
+    ['ctwrn', ' help → Show this help menu'],
+    ['ctwrn', ' whoami → Who is Akash?'],
+    ['ctwrn', ' skills → List tech skills & levels'],
+    ['ctwrn', ' projects → Show project highlights'],
+    ['ctwrn', ' contact → Display all contact info'],
+    ['ctwrn', ' email → Open email client'],
+    ['ctwrn', ' github → Open GitHub profile'],
+    ['ctwrn', ' linkedin → Open LinkedIn'],
+    ['ctwrn', ' status → Availability status'],
+    ['ctwrn', ' resume → Download/view resume'],
+    ['ctwrn', ' clear → Clear terminal output'],
     ['ctinf', '└────────────────────────────────────────────────┘'],
   ],
   whoami: () => [
-    ['ctok',  '> AKASH M — B.Sc. Computer Science Student'],
-    ['',      '  📍 Pudukkottai, Tamil Nadu, India'],
-    ['',      '  🎓 Bharathidasan University (Graduating 2026)'],
-    ['',      '  🏆 Certified: NM GenAI × IBM'],
-    ['',      '  ⚽ District-Level Football Goalkeeper'],
-    ['',      '  🗣  Tamil (Fluent)  |  English (Fluent)'],
-    ['ctinf', '  🎯 Seeking: SWE / Python Dev / IT Intern roles'],
+    ['ctok', '> AKASH M — B.Sc. Computer Science Graduate'],
+    ['', ' 📍 Pudukkottai, Tamil Nadu, India'],
+    ['', ' 🎓 Bharathidasan University (2026)'],
+    ['', ' 🏆 Certified: NM GenAI × IBM'],
+    ['', ' 🎮 Building an Android RPG in Unity 6'],
+    ['', ' 🤖 Building an AI assistant with Claude API'],
+    ['', ' ⚽ District-Level Football Goalkeeper'],
+    ['', ' 🗣 Tamil (Fluent) | English (Fluent)'],
+    ['ctinf', ' 🎯 Seeking: Python Dev / Software Dev / IT Intern'],
   ],
   skills: () => [
-    ['ctok',  '> TECH SKILLS'],
-    ['',      '  Python      ████████░░  85%  [Intermediate/Advanced]'],
-    ['',      '  PHP         ███████░░░  72%  [Intermediate]'],
-    ['',      '  HTML        █████████░  88%  [Advanced]'],
-    ['',      '  CSS         ████████░░  80%  [Intermediate/Advanced]'],
-    ['',      '  MySQL       ███████░░░  75%  [Intermediate]'],
-    ['ctinf', '  + Web Dev, Problem Solving, Team Collaboration'],
+    ['ctok', '> TECH SKILLS'],
+    ['', ' Python ████████░░ 85% [Intermediate/Advanced]'],
+    ['', ' C# (Unity) ████████░░ 80% [Intermediate/Advanced]'],
+    ['', ' PHP ███████░░░ 72% [Intermediate]'],
+    ['', ' React (JS) ████████░░ 78% [Intermediate/Advanced]'],
+    ['', ' HTML/CSS █████████░ 88% [Advanced]'],
+    ['', ' MySQL/SQL ███████░░░ 75% [Intermediate]'],
+    ['', ' Git/GitHub ████████░░ 78% [Intermediate]'],
+    ['ctinf', ' + Prompt Engg, LLM Integration, AI Product Design'],
   ],
   projects: () => [
-    ['ctok',  '> PROJECTS'],
-    ['ctwrn', '  [01]  Smart Parking System  (Python)'],
-    ['',      '        Status   : COMPLETED ✓'],
-    ['',      '        Stack    : Python · Real-time Logic'],
-    ['',      '        Features : Slot monitoring, management, docs'],
-    ['ctinf', '  [02]  Next project loading ... ▮'],
+    ['ctok', '> PROJECTS'],
+    ['ctwrn', ' [01] Kumari Kandam: Eternal Legacy (Unity 6, C#)'],
+    ['', ' Status : IN DEVELOPMENT ▮'],
+    ['', ' Stack : Unity 6 · C# · Android SDK'],
+    ['', ' Features : Combat, boss AI, multiplayer, 50-hero roster'],
+    ['ctwrn', ' [02] Omnix — AI Assistant App (React, Claude API)'],
+    ['', ' Status : IN DEVELOPMENT ▮'],
+    ['', ' Stack : React · JavaScript · Claude API'],
+    ['ctwrn', ' [03] Smart Parking System (Python)'],
+    ['', ' Status : COMPLETED ✓'],
+    ['', ' Stack : Python · Real-time Logic'],
+    ['ctwrn', ' [04] Citizen AI (Python, HTML, CSS)'],
+    ['', ' Status : COMPLETED ✓'],
+    ['ctwrn', ' [05] Digital Portfolio Website (HTML, CSS)'],
+    ['', ' Status : LIVE ✓ — akash-ak.vercel.app'],
   ],
   contact: () => [
-    ['ctok',  '> CONTACT INFORMATION'],
-    ['',      '  📧  akash0707akav@gmail.com'],
-    ['',      '  📞  +91 7708361814'],
-    ['',      '  💻  github.com/akash0707ak'],
-    ['',      '  🔗  linkedin.com/in/akash-m-0b7362369'],
-    ['',      '  📍  Pudukkottai, Tamil Nadu, India'],
+    ['ctok', '> CONTACT INFORMATION'],
+    ['', ' 📧 akash0707akav@gmail.com'],
+    ['', ' 📞 +91 7708361814'],
+    ['', ' 💻 github.com/akash0707ak'],
+    ['', ' 🔗 linkedin.com/in/akash-m-0b7362369'],
+    ['', ' 📍 Pudukkottai, Tamil Nadu, India'],
   ],
   email: () => {
     window.location.href = 'mailto:akash0707akav@gmail.com';
@@ -1044,25 +1108,24 @@ const CMDS = {
     return [['ctok','> Opening LinkedIn profile ...']];
   },
   status: () => [
-    ['ctok',  '> AVAILABILITY STATUS: ONLINE ✓'],
-    ['',      '  Looking for  : SWE / Python Dev / IT Intern'],
-    ['',      '  Open to      : Full-time, Internship, Projects'],
-    ['ctwrn', '  Response     : < 24 hours guaranteed'],
-    ['ctinf', '  Location     : Open to remote or Pudukkottai area'],
+    ['ctok', '> AVAILABILITY STATUS: ONLINE ✓'],
+    ['', ' Looking for : SWE / Python Dev / IT Intern'],
+    ['', ' Open to : Full-time, Internship, Projects'],
+    ['ctwrn', ' Response : < 24 hours guaranteed'],
+    ['ctinf', ' Location : Open to remote or Pudukkottai area'],
   ],
   resume: () => [
     ['ctinf', '> RESUME SUMMARY'],
-    ['',      '  Name    : Akash M'],
-    ['',      '  Degree  : B.Sc. Computer Science (Expected 2026)'],
-    ['',      '  Univ.   : Bharathidasan University, Tamil Nadu'],
-    ['',      '  Cert    : NM GenAI × IBM'],
-    ['',      '  Skills  : Python, PHP, HTML, CSS, MySQL'],
-    ['',      '  Project : Smart Parking System (Python)'],
-    ['ctwrn', '  Contact akash0707akav@gmail.com for full resume PDF'],
+    ['', ' Name : Akash M'],
+    ['', ' Degree : B.Sc. Computer Science (Bharathidasan University, 2026)'],
+    ['', ' Cert : NM GenAI × IBM'],
+    ['', ' Skills : Python, C# (Unity), PHP, React, HTML/CSS, MySQL'],
+    ['', ' Projects: Kumari Kandam RPG, Omnix AI Assistant, Smart Parking,'],
+    ['', ' Citizen AI, Portfolio Website'],
+    ['ctwrn', ' Contact akash0707akav@gmail.com for full resume PDF'],
   ],
   clear: () => null,
 };
-
 function addCtLines(lines) {
   lines.forEach(([cls, text]) => {
     const div = document.createElement('div');
@@ -1075,21 +1138,17 @@ function addCtLines(lines) {
   });
   cto.scrollTop = cto.scrollHeight;
 }
-
 cti.addEventListener('keydown', e => {
   if (e.key !== 'Enter') return;
   const inp = cti.value.trim().toLowerCase();
   cti.value = '';
-
   // Echo input
   const echoDiv = document.createElement('div');
   echoDiv.className = 'ctl';
   echoDiv.innerHTML = `<span class="ctp">akash@portfolio:~$</span> <span style="color:var(--txtbr)">${inp || ''}</span>`;
   cto.appendChild(echoDiv);
   cto.scrollTop = cto.scrollHeight;
-
   if (!inp) return;
-
   if (CMDS[inp]) {
     if (inp === 'clear') { cto.innerHTML = ''; return; }
     const r = CMDS[inp]();
@@ -1100,16 +1159,13 @@ cti.addEventListener('keydown', e => {
       ['ctwrn', "Type 'help' for available commands."],
     ]);
   }
-
   cto.scrollTop = cto.scrollHeight;
 });
-
 // Focus terminal on section enter
 const contactObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) cti.focus(); });
 }, { threshold: 0.5 });
 contactObs.observe(document.getElementById('contact'));
 </script>
-
 </body>
 </html>
